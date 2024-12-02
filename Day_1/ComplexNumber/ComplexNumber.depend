@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1733160305 source:/home/gohaar/Desktop/C++/Day_1/ComplexNumber/main.cpp
+	<iostream>
+	<limits>
+
