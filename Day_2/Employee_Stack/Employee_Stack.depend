@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1733235118 source:/home/gohaar/Desktop/C++/C++_Labs/Day_2/Employee_Stack/main.cpp
+1733249967 source:/home/gohaar/Desktop/C++/C++_Labs/Day_2/Employee_Stack/main.cpp
 	<iostream>
 	<stdexcept>
+	<string>
 	"conio.h"
 
 1731938256 /home/gohaar/Desktop/C++/C++_Labs/Day_2/Employee_Stack/conio.h
