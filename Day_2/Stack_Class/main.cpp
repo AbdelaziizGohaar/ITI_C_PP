@@ -49,10 +49,6 @@ public:
  };
 
 
-
-
-
-
 /////////////////////////////////////////////////// class stack
  class Stack {
 
@@ -114,7 +110,7 @@ public :
 
 
 
- void display()
+ void display_2()
  {
     if (Top == -1)
     {
@@ -131,14 +127,33 @@ public :
 
           Top -- ;
        }
-
-
     }
-
-
-
-
  } // end of peek
+
+
+
+ void display() {
+    if (Top == -1) {
+        throw runtime_error("Stack is empty!");
+    } else {
+        cout << "Stack contents (from top to bottom):\n";
+        for (int i = Top; i >= 0; i--) {
+            Employee data = Items[i];
+            cout << "Employee ID: " << data.getId() << endl;
+            cout << "Employee Name: " << data.getName() << endl;
+            cout << "Employee Salary: " << data.getSalary() << endl;
+            cout << "--------------------------\n";
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 
 };

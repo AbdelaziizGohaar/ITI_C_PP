@@ -38,14 +38,28 @@ class ComplexNumber
  public :
 
 
-    void setReal()
+    void setReal_2()
     {
         cout << "Enter a valid real number  ";
-        while (!isValidInput()) {
-            cout << "Invalid input! Please enter a valid real number: ";
-        }
         cin >> real;
+        ///this.real =
     }
+
+
+void setReal()
+{
+    double temp; // Temporary variable to hold input.
+    cout << "Enter a valid real number: ";
+    cin>> temp;
+
+    while (!isValidInput(temp))
+    { // Use validation method.
+        cout << "Invalid input! Please enter a valid real number: ";
+    }
+    real = temp; // Assign the valid input to the real variable.
+}
+
+
 
 
     double getReal()
@@ -60,9 +74,19 @@ class ComplexNumber
     }
 */
 
-    void setImaginary() {
+    void setImaginary_2() {
+       double temp ;
         cout << "Enter a valid imaginary number  ";
-        while (!isValidInput()) {
+        cin>>temp ;
+         imaginary;
+    }
+
+    void setImaginary() {
+       double temp ;
+        cout << "Enter a valid imaginary number  ";
+        cin>>temp ;
+        while (!isValidInput(temp))
+        {
             cout << "Invalid input! Please enter a valid imaginary number: ";
         }
         cin >> imaginary;
@@ -81,8 +105,6 @@ class ComplexNumber
         x.imaginary = this->imaginary + c.imaginary;
         return x;
     }
-
-
 
 
    ComplexNumber Subb (ComplexNumber c)
@@ -113,16 +135,54 @@ class ComplexNumber
     }
 
 
-    bool isValidInput() {
+
+
+    void display_2()
+    {
+
+        if (real != 0)
+        {
+           cout<<real;
+        }
+        if (imaginary > 0)
+        {
+            cout<<"+"<<imaginary<<"i"<<endl;
+        }else if(imaginary < 0)
+        {
+            cout<<imaginary<<"i"<<endl;
+        }
+    }
+
+
+
+
+    bool isValidInput_2()
+    {
         double num;
         cin >> num;
         if (cin.fail()) {
             cin.clear();
-//            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return false;
         }
         return true;
     } // dah end of validation
+
+
+bool isValidInput(double &num) {
+    cin >> num;
+    if (cin.fail()) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        return false;
+    }
+    return true;
+}
+
+
+
+
+
 
 }; // end of class
 
@@ -134,16 +194,16 @@ int main()
    // aziz.setReal(10);
    // aziz.setImaginary(20);
 
-    aziz.setReal();
-    aziz.setImaginary();
+    aziz.setReal_2();
+    aziz.setImaginary_2();
 
 
     ComplexNumber gohar;
    // gohar.setReal(100);
   //  gohar.setImaginary(200);
 
-    gohar.setReal();
-    gohar.setImaginary();
+    gohar.setReal_2();
+    gohar.setImaginary_2();
 
 
 
@@ -153,12 +213,11 @@ int main()
    // aziz.display();
 
     cout << "Sum: "<<endl;
-    sum.display();
+    sum.display_2();
 
 
     cout << "minuss : " <<endl;
-    subb.display();
-
+    subb.display_2();
 
 
 

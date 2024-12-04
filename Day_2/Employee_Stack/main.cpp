@@ -70,6 +70,7 @@ private :
           int Top ;
           int Size;
           Employee *Items ;
+         // int *ptrDisplay ;
 public :
 
    Stack(int Size)
@@ -124,7 +125,7 @@ public :
 
 
 
- void display()
+ void display_2()
  {
     if (Top == -1)
     {
@@ -132,23 +133,34 @@ public :
     }else
     {
       Employee data ;
-       while(Top >= 0 )
+       for (int i = Top ;i > 0 ; i--)
        {
-          data = Items[Top] ;
+         data = Items[Top] ;
          cout<<"employee id "<< data.getId() <<endl;
          cout<<"employee name "<< data.getName() <<endl;
          cout<<"employee salary "<< data.getSalary() <<endl;
 
-          Top -- ;
        }
-
 
     }
 
+ } // end of display
 
+ void display() {
+    if (Top == -1) {
+        throw runtime_error("Stack is empty!");
+    } else {
+        cout << "Stack contents (from top to bottom):\n";
+        for (int i = Top; i >= 0; i--) {
+            Employee data = Items[i];
+            cout << "Employee ID: " << data.getId() << endl;
+            cout << "Employee Name: " << data.getName() << endl;
+            cout << "Employee Salary: " << data.getSalary() << endl;
+            cout << "--------------------------\n";
+        }
+    }
+}
 
-
- } // end of peek
 
 
 };
@@ -482,7 +494,6 @@ int main()
  void pushEmp_void(Stack &empStack) {
     char decision = 'y';
 
-
     while (decision == 'y')
     {
         clear(); // Clear the screen if required.
@@ -510,7 +521,13 @@ int main()
            cin>> eSal;
             e.setSalary(eSal);
 
-            empStack.push(e);
+         if(empStack.push(e))
+         {
+          cout<<"User Add"<<endl;
+         }else
+         {
+           cout<<"Memory Full"<<endl;
+         }
 
            // getch();
 

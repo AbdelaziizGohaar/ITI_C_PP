@@ -34,17 +34,17 @@ int main()
 
     // Swap by value
     swapByValue(x, y);
-    cout << "After ByValue: x = " << x << ", y = " << y << endl;
+    cout << "hnaa After ByValue: x = " << x << ", y = " << y << endl;
 
-    // Swap by address
+    // hnaaa by address
     swapByAddress(&x, &y);
-    cout << "After ByAddress: x = " << x << ", y = " << y << endl;
+    cout << "hna After ByAddress: x = " << x << ", y = " << y << endl;
 
-    // Swap by reference
+    // hnaaa  by reference
     swapByReference(x, y);
-    cout << "after ByReference: x = " << x << ", y = " << y << endl;
+    cout << "hna after ByReference: x = " << x << ", y = " << y << endl;
 
-
+/*
         complex_num c;
     c.set_real(-10.0);
     c.set_img(-15.0);
@@ -63,6 +63,9 @@ int main()
     int m=2;
     swap2(k,m);
     cout<<k<<" "<<m;
+
+*/
+
     return 0;
 }
 
