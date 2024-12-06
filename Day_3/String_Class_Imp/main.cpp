@@ -19,6 +19,25 @@ public:
         arrSize = 0;
     }
 
+//////////////////////////////////////// Copy Constructor
+    String_O(String_O& s)   {
+        arrSize = s.arrSize;
+        if (arrSize > 0) {
+            str = new char[arrSize + 1]; 
+            for (int i = 0; i < arrSize; ++i) {
+                str[i] = s.str[i];
+            }
+            str[arrSize] = '\0'; 
+        } else {
+            str = NULL;
+        }
+
+        ptrBegin = str;
+        ptrCurrent = str;
+        ptrEnd = str + arrSize;
+    }
+
+
     ~String_O() {
         delete[] str;
     }
@@ -137,8 +156,35 @@ int strCompare(String_O &other) {
         }
     }
 
-    return 0; // Strings are equal
+    return 0; /////////////// Strings are equal
 }
+
+
+//////////////////////////////////////// Comparison operators in String_O class
+bool operator==(String_O &s) {
+    return strCompare(s) == 0;
+}
+
+bool operator!=(String_O &s) {
+    return strCompare(s) != 0;
+}
+
+bool operator<(String_O &s) {
+    return strCompare(s) < 0;
+}
+
+bool operator<=(String_O &s) {
+    return strCompare(s) <= 0;
+}
+
+bool operator>(String_O &s) {
+    return strCompare(s) > 0;
+}
+
+bool operator>=(String_O &s) {
+    return strCompare(s) >= 0;
+}
+
 
  };
 
