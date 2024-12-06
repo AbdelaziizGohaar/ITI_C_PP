@@ -12,10 +12,10 @@ private:
 
 public:
     String_O() {
-        str = nullptr;
-        ptrBegin = nullptr;
-        ptrCurrent = nullptr;
-        ptrEnd = nullptr;
+        str = NULL;
+        ptrBegin = NULL;
+        ptrCurrent = NULL;
+        ptrEnd = NULL;
         arrSize = 0;
     }
 
@@ -28,7 +28,7 @@ public:
     }
 
     void print() {
-        if (ptrBegin == nullptr || arrSize == 0) {
+        if (ptrBegin == NULL || arrSize == 0) {
             cout << "String is empty!" << endl;
             return;
         }
@@ -45,7 +45,7 @@ public:
         char *newBuffer = new char[newSize + 1]; // +1 for null terminator
 
         // Copy old string data
-        if (str != nullptr) {
+        if (str != NULL) {
             for (int i = 0; i < arrSize; ++i) {
                 newBuffer[i] = ptrBegin[i];
             }
@@ -68,7 +68,7 @@ public:
     }
 
     void toLower() {
-        if (ptrBegin == nullptr) return;
+        if (ptrBegin == NULL) return;
 
         ptrCurrent = ptrBegin;
         for (int i = 0; i < arrSize; ++i) {
@@ -79,7 +79,7 @@ public:
     }
 
     void toUpper() {
-        if (ptrBegin == nullptr) return;
+        if (ptrBegin == NULL) return;
 
         ptrCurrent = ptrBegin;
         for (int i = 0; i < arrSize; ++i) {
@@ -107,7 +107,7 @@ public:
     if (newSize >= arrSize) {
         char *newBuffer = new char[newSize + 1]; // +1 for null terminator
 
-        if (str != nullptr) {
+        if (str != NULL) {
             delete[] str; // Delete old buffer
         }
 
