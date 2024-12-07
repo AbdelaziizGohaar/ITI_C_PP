@@ -98,13 +98,25 @@ void setReal()
         return imaginary;
     }
 
-    ComplexNumber Add(ComplexNumber c)
+    ComplexNumber Add(ComplexNumber c)   /// c1.add(c2)
     {
         ComplexNumber x;
         x.real = this->real + c.real;
         x.imaginary = this->imaginary + c.imaginary;
         return x;
     }
+
+
+        ComplexNumber AddZZ(ComplexNumber c)   /// c1.add(c2)
+    {
+         x.real = this->real + c.real;
+        x.imaginary = this->imaginary + c.imaginary;
+        return *this ;
+    }
+
+
+
+
 
 
    ComplexNumber Subb (ComplexNumber c)

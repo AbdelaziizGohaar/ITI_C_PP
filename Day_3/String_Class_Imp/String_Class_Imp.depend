@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1733495703 source:/home/gohaar/Desktop/C++/C++_Labs/Day_3/String_Class_Imp/main.cpp
+	<iostream>
+	<cstring>
+

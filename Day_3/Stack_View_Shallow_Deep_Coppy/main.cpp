@@ -20,7 +20,7 @@ public :
         this->Size = Size ;
         Top = -1 ;
         Items = new int [Size] ;
-        counter ++ ;
+       Stack::counter ++ ;
         cout<<"main Constractor" <<"counter ="<< counter <<endl;
     } // constructor end
 
